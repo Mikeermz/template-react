@@ -1,10 +1,18 @@
+// Depencendies
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// Styles
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './components/assets/css/index.css';
+// Components
+import App from './components/App';
+// Service Worker
 import * as serviceWorker from './serviceWorker';
-
-ReactDOM.render(<App />, document.getElementById('root'));
+// Render app 
+ReactDOM.render(
+  <App />, 
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
