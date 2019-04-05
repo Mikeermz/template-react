@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import NavbarComponent from './NavbarComponent'
+import PropTypes from 'prop-types';
 
 class Header extends Component {
   constructor(props){
@@ -9,21 +11,23 @@ class Header extends Component {
     }
   }
 
+  static Proptypes = {
+    name: PropTypes.string.isRequired
+  }
   componentDidMount = () => {
-    console.log('Did Mount');
     setTimeout(()=>{
       this.setState({
-        message: `Hello from Did mount Mikee`
+        message: `Hello from Did mount`
       })
     }, 3000);
   };
-  
+
   render() {
-    console.log('render')
+    const  { name }  = this.props
     return (
       <div >
        <NavbarComponent/>
-       <div>{this.state.message}</div>
+       <div>{this.state.message} {name} </div>
       </div>
     );
   }

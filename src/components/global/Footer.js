@@ -12,7 +12,7 @@ class Footer extends Component {
     const { year } = this.props
     return (
       <footer> 
-        Mikee Rmz  - {year} - {message}
+        Mikee Rmz  - {year}
       </footer>
     );
   }

@@ -1,16 +1,22 @@
 // Depencendies
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/assets/css/index.css';
 // Components
-import App from './components/App';
+// import App from './components/App';
+// Routes
+import AppRoutes from './routes/'
+
 // Service Worker
 import * as serviceWorker from './serviceWorker';
 // Render app 
 ReactDOM.render(
-  <App />, 
+  <BrowserRouter>
+    <AppRoutes/>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
