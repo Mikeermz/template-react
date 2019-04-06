@@ -9,26 +9,29 @@ import { ListGroup, ListGroupItem } from 'reactstrap';
 import api from '../../../api'
 
 class ListTodo extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      items: []
+    }
+  }
   static Proptypes = {
     items: PropTypes.string.isRequired
   }
   componentDidMount() {
     const  { items }  = this.props
-    console.log(items)
     api.get(`/${items}`).then((response) =>{
-      console.log(response.data)
+      this.setState({
+        items: response.data
+      })
     }).catch((error) => console.log(error));
   }
   render() {
-    const  { items }  = this.props
-    console.log(items)
     return (
     <ListGroup>
-      <ListGroupItem>Cras justo odio</ListGroupItem>
-      <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-      <ListGroupItem>Morbi leo risus</ListGroupItem>
-      <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
-      <ListGroupItem>Vestibulum at eros</ListGroupItem>
+      {this.state.items && this.state.items.map((item, key) => {
+        return  <ListGroupItem  key={key}> {item.name} </ListGroupItem> }
+      )}
     </ListGroup>
     );
   }
