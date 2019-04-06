@@ -8,7 +8,6 @@ class Body extends Component {
   }
   
   render() {
-    console.log("hola desde la consola")
     const {content} = this.props
     console.log(content)
     return (

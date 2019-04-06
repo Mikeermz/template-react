@@ -23,7 +23,7 @@ class App extends Component {
       <div className="App">
        <Header name={myName}/>
        <Body content={children} />
-       <Footer year={this.setYear()}/>
+       <Footer  year={this.setYear()}/>
       </div>
     );
   }
