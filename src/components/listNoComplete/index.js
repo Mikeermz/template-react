@@ -11,7 +11,7 @@ class ListNoComplete extends Component {
   render() {
     return (
       <div >
-        <ListTodo/>
+        <ListTodo items="tasks-incompleted"/>
       </div>
     );
   }

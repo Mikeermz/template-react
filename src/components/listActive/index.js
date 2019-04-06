@@ -11,7 +11,7 @@ class ListActive extends Component {
   render() {
     return (
       <div >
-        <ListTodo/>
+        <ListTodo items="tasks-active"/>
       </div>
     );
   }

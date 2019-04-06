@@ -1,9 +1,5 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-
-// Styles
-
-// import PropTypes from 'prop-types';
 // Components
 import ListTodo from '../global/list';
 import ButtonTodo from '../global/button';
@@ -15,7 +11,7 @@ class Todo extends Component {
       <div >
       <InputTodo/>
       <ButtonTodo/>
-      <ListTodo/>
+      <ListTodo items="tasks"/>
       </div>
     );
   }

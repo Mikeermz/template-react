@@ -9,7 +9,6 @@ class Body extends Component {
   
   render() {
     const {content} = this.props
-    console.log(content)
     return (
         <div>
           {/* <Home /> */}
