@@ -18,7 +18,8 @@ class ListTodo extends Component {
   static Proptypes = {
     items: PropTypes.string.isRequired
   }
-  componentDidMount() {
+
+  apiCallGet = () =>{
     const  { items }  = this.props
     api.get(`/${items}`).then((response) =>{
       this.setState({
@@ -26,6 +27,14 @@ class ListTodo extends Component {
       })
     }).catch((error) => console.log(error));
   }
+  componentDidMount() {
+    this.apiCallGet();
+  }
+  
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    this.apiCallGet();
+  }
+
   render() {
     return (
     <ListGroup>

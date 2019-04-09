@@ -3,17 +3,29 @@ import React, { Component } from 'react';
 
 // Styles
 import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { EventEmitter } from 'events';
 
 // import PropTypes from 'prop-types';
 // Components
 
 class InputTodo extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      value: ''
+    };
+  }
+  handleChange = (event) => {
+    this.setState({
+      value: event.target.value
+    });
+    localStorage.setItem('Task', event.target.value);
+  }
   render() {
     return (
       <div >
         <InputGroup>
-          <InputGroupAddon addonType="prepend">@</InputGroupAddon>
-          <Input placeholder="username" />
+          <Input placeholder="task" value={this.state.value}  onChange={this.handleChange} />
         </InputGroup>
       </div>
     );
