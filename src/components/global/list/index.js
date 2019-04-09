@@ -25,6 +25,7 @@ class ListTodo extends Component {
       this.setState({
         items: response.data
       })
+      console.log(this.state.items)
     }).catch((error) => console.log(error));
   }
   componentDidMount() {
@@ -35,11 +36,20 @@ class ListTodo extends Component {
     this.apiCallGet();
   }
 
+  taskHandle = (event) => {
+    const task = event.target.id
+    api.put(`/tasks/${task}`)
+         .then( (response) => {
+           console.log(response.data)
+            this.apiCallGet();
+         }).catch( (error) => console.log(error.response))
+  }
+
   render() {
     return (
     <ListGroup>
       {this.state.items && this.state.items.map((item, key) => {
-        return  <ListGroupItem  key={key}> {item.name} </ListGroupItem> }
+        return  <ListGroupItem id={item._id} key={key} onClick={this.taskHandle}> {item.name} </ListGroupItem> }
       )}
     </ListGroup>
     );

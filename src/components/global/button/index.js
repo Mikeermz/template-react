@@ -12,19 +12,7 @@ class ButtonTodo extends Component {
       task: ''
     }
   }
-  handleClick = () => {
-    const task = {
-      name:  localStorage.getItem('Task')
-    }
-    api.post(`/tasks`, task).then((response) =>{
-      console.log(response.data)
-      this.forceUpdate(() => {
-        this.setState({
-          task: task.name
-        })
-      })
-    }).catch((error) => console.log(error));
-  }
+
   render() {
     return (
       <div >

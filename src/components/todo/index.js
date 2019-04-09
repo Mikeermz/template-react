@@ -15,6 +15,7 @@ class Todo extends Component {
       task: ''
     }
   }
+  
   handleClick = () => {
     const task = {
       name:  localStorage.getItem('Task')
