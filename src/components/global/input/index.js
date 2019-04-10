@@ -15,12 +15,20 @@ class InputTodo extends Component {
       value: ''
     };
   }
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    this.setState({
+      value: ''
+    })
+  };
+
   handleChange = (event) => {
+    event.preventDefault();
     this.setState({
       value: event.target.value
     });
     localStorage.setItem('Task', event.target.value);
-  }
+  };
+  
   render() {
     return (
       <div >

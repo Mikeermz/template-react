@@ -15,7 +15,7 @@ class Todo extends Component {
       task: ''
     }
   }
-  
+
   handleClick = () => {
     const task = {
       name:  localStorage.getItem('Task')
@@ -32,7 +32,7 @@ class Todo extends Component {
   render() {
     return (
       <div >
-      <InputTodo/>
+      <InputTodo taskName="hola"/>
       <Button color="primary" onClick={this.handleClick}>Send</Button>{' '}
       <ListTodo items="tasks"/>
       </div>
