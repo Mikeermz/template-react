@@ -49,7 +49,7 @@ class ListTodo extends Component {
     return (
     <ListGroup>
       {this.state.items && this.state.items.map((item, key) => {
-        return  <ListGroupItem id={item._id} key={key} onClick={this.taskHandle}> {item.name} </ListGroupItem> }
+        return  <ListGroupItem id={item.name} color={item.completed ? 'success' : 'danger'} key={key} onClick={this.taskHandle}> {item.name} </ListGroupItem> }
       )}
     </ListGroup>
     );
